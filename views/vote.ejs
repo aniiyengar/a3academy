@@ -1,0 +1,130 @@
+
+<link rel="stylesheet" href="styles/pages/vote.css"/>
+
+<div id="header" class="card">
+	<div id="header-logo" onclick='location.href="/";'>
+	</div>
+</div>
+
+<div id="content" class="card">
+	<div id="voting-content">
+		<div id="topic-list-container">
+			<h3>&nbsp;&nbsp;Topics</h3>
+			<% if (req.session.user) { %>
+			<div id="topic-table">
+				<% for (var i = 0; i < topics.length; i++) { 
+					var f;
+					var user = req.session.user;
+					if (user.up.indexOf(topics[i].name) >= 0) {
+						f = "u";
+					}
+					else if (user.down.indexOf(topics[i].name) >= 0) {
+						f = "d";
+					}
+					else {
+						f = "n";
+					}
+
+					 %>
+
+					<div class="topic-item" data-name="<%= topics[i].name %>">
+						<%= i+1 %>. <%= topics[i].name %>
+
+						<div class="downvote <%= (f === "d") ? "selected" : "" %>"></div>
+						<div class="downvote-label">
+							<%= topics[i].downvotes %>
+						</div>
+
+						<div class="vote-space"></div>
+
+						<div class="upvote <%= (f === "u") ? "selected" : "" %>"></div>
+						<div class="upvote-label">
+							<%= topics[i].upvotes %>
+						</div>
+
+					</div>
+				<% } %>
+			</div>
+			<% } else { %>
+			<div id="topic-table">
+				<% for (var i = 0; i < topics.length; i++) { %>
+
+					<div class="topic-item" data-name="<%= topics[i].name %>">
+						<%= i+1 %>. <%= topics[i].name %>
+
+						<div class="downvote"></div>
+						<div class="downvote-label">
+							<% topics[i].downvotes %>
+						</div>
+
+						<div class="vote-space"></div>
+
+						<div class="upvote"></div>
+						<div class="upvote-label">
+							<% topics[i].upvotes %>
+						</div>
+
+					</div>
+				<% } %>
+			</div>
+			<% } %>
+		</div>
+		<div id="suggest-container">
+			<h3>&nbsp;&nbsp;Suggest A Topic</h3>
+			<div id="suggest-box">
+				<form name="suggest" action="/topic/suggest" method="POST">
+					<div class="form-group">
+    					<label for="inputName">Name</label>
+						<input name="name" type="name" class="form-control" id="inputName" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<label for="inputEmail">Email</label>
+						<input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+					</div>
+
+					<div class="form-group">
+						<label for="inputTopic">Topic</label>
+						<textarea name="topic" class="form-control" rows="2" id="inputTopic" placeholder="Type topic here..."></textarea>
+					</div>
+					<div id="captcha" class="g-recaptcha" data-sitekey="6Le_-QkTAAAAAFKXrZ7DVvr74b6zMuyjISNXz1nW"></div>
+					<input type="submit" class="btn btn-primary" value="Submit" />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+    <div id="footer-text">
+        <p>Copyright &copy; A3Academy <script>document.write((new Date()).getFullYear());</script>&nbsp;&nbsp;|&nbsp;&nbsp;Built by Aniruddh Iyengar</p>
+    </div>
+</div>
+
+<script>
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+$(".upvote, .downvote").click(function(	) {
+	var which = $(this).hasClass("upvote") ? "up" : "down";
+	var topic = $(this).parent().data("name");
+
+	$.post("/topic/ballot", {
+		w: which,
+		t: topic
+	}, function(data) {
+		location.reload();
+	});
+
+});
+
+</script>
+

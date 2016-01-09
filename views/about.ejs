@@ -1,0 +1,60 @@
+
+<link rel="stylesheet" href="styles/pages/about.css"/>
+
+<div id="header" class="card">
+	<div id="header-logo" onclick='location.href="/";'>
+	</div>
+</div>
+
+<div id="about" class="card">
+	<div id="about-text">
+		<h1>About Us</h1>
+		<p class="indent">A3Academy is a group of high school students interested in STEM education. At our school, we noticed that too many students aren't able to connect with their teachers on fundamental concepts. We decided to take action, and try to change how STEM subjects are taught.</p>
+		<p class="indent">Thus A3Academy was born. We make short, informative videos on math, chemistry, biology, and physics that are well-suited towards a high school student's curriculum.</p>
+		<p class="indent">We're different from other educational videos because we believe in "quantizing" information—making short videos on granular topics, instead of long (and often boring) videos on entire subjects.</p>
+		<p class="indent">Our videos are concise, covering entire topics effectively. And since we're high schoolers ourselves, we always keep high school students' needs in the front of our minds. We base our videos on high school curricula, and more importantly, <a id="votePage">requests from you—our audience.</a></p>
+		<p class="indent">A3Academy is run by a team of diverse, passionate, accomplished high school students. Learn more about them below:</p>
+
+		<div class="team-bio">
+			<div class="bio-pic" id="ani-pic"></div>
+			<h1>Ani Iyengar (Wallace)</h1>
+			<p class="team-email" onclick="location.href='mailto:wallace@a3academy.net';">wallace@a3academy.net</p>
+			<p>Ani is a senior at the Advanced Math & Science Academy. He has a lifelong passion for learning, as part of the nationally-ranked AMSA quiz bowl team. He is also an avid programmer and tennis player.</p>
+		</div>
+		<div class="team-bio">
+			<div class="bio-pic" id="anton-pic"></div>
+			<h1>Anton Zverev (Mike)</h1>
+			<p class="team-email" onclick="location.href='mailto:mike@a3academy.net';">mike@a3academy.net</p>
+			<p>Anton is a senior at the Advanced Math & Science Academy. He served as president of his school's Latin Club and is a member of NHS. He enjoys Taekwondo, playing tennis, and playing the piano.</p>
+		</div>
+		<div class="team-bio">
+			<div class="bio-pic" id="ashwin-pic"></div>
+			<h1>Ashwin Varghese (Pete)</h1>
+			<p class="team-email" onclick="location.href='mailto:pete@a3academy.net';">pete@a3academy.net</p>
+			<p>Ashwin is a senior at the Advanced Math & Science Academy. As a member of the AMSA math team, he is passionate about learning and teaching STEM. He enjoys playing basketball and piano.</p>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+    <div id="footer-text">
+        <p>Copyright &copy; A3Academy <script>document.write((new Date()).getFullYear());</script>&nbsp;&nbsp;|&nbsp;&nbsp;Built by Aniruddh Iyengar</p>
+    </div>
+</div>
+
+<script>
+
+if (!Cookies.get("u")) {
+    var id = (new Date()).getTime();
+    document.cookie = "u=" + id + ";";
+    Cookies.set("u", id, {expires: 365});
+}
+else {
+    id = Cookies.get("u");
+}
+
+console.log("retrieved cookie user id = " + id);
+
+$("#votePage").attr("href", "/user/login?u=" + id);
+
+</script>

@@ -1,0 +1,132 @@
+
+<link rel="stylesheet" href="styles/pages/homepage.css"/>
+
+<!-- 
+<iframe height="1800" width="848" src="http://a3academy.spreadshirt.com/" name="Spreadshop" id="Spreadshop" frameborder="0" onload="window.scrollTo(0, 0);"></iframe>The products in this online shop are provided by <a href="http://www.spreadshirt.com">Spreadshirt</a>, your one stop shop for creating cool t-shirts, accessories and more.
+-->
+
+<div id="jumbo" class="card">
+    <div id="jumbo-front">
+        <div id="jumbo-logo">
+        </div>
+        <div id="jumbo-icons">
+            <div class="soc-icon" id="jumbo-fbicon" onclick="location.href='/facebook';">
+            </div>
+            <div class="soc-icon" id="jumbo-twittericon" onclick="location.href='/twitter';">
+            </div>
+            <div class="soc-icon" id="jumbo-yticon" onclick="location.href='/youtube';">
+            </div>
+            <div class="soc-icon" id="jumbo-shopicon" onclick="location.href='/store';">
+            </div>
+        </div>
+    </div>
+
+    <div id="jumbo-arrow" onclick="$('html, body').animate({scrollTop: $(window).height()}, 800);">
+    </div>
+</div>
+
+<div id="visit" class="card" onclick="location.href='/youtube';">
+    <div id="visit-text">
+        <h1>Check out our YouTube channel!</h1>
+    </div>
+</div>
+
+<div id="about" class="card">
+    <div id="about-content">
+        <div id="about-text">
+            <h1>About Us</h1>
+
+            <p>A3Academy makes educational videos by high school students, for high school students. We employ an innovative philosophy of "quantizing" the knowledge learned in the classroom. <a href="/about">Learn More &gt;</a></p>
+        </div>
+
+    </div>
+</div>
+
+<div id="vote" class="card">
+    <div id="about-content">
+        <div id="vote-text">
+            <h1>Suggest a Topic</h1>
+
+            <p>Do you have a topic in biology, chemistry, physics or math that you want covered? Suggest a topic, or vote on existing topics that you'd like to see as future A3Academy videos! <a id="votePage">Suggest a topic &gt;</a></p>
+        </div>
+
+    </div>
+</div>
+
+<div id="shop" class="card">
+    <div id="about-content">
+        <div id="about-text">
+            <h1>Shop A3Academy</h1>
+
+            <p>Show off your love of learning by shopping for A3Academy gear, including hoodies, mouse pads, and coffee mugs. Each purchase goes toward our videos. <a href="/store">Shop A3Academy &gt;</a></p>
+        </div>
+
+    </div>
+</div>
+
+<div id="contact" class="card">
+    <div id="contact-content">
+        <h1>Contact Us</h1>
+        <div class="contact-label"><p>General/business inquiries:</p></div>
+        <div class="contact-value"><p><a href="mailto:info@a3academy.net">info@a3academy.net</a></p></div>
+
+        <div class="contact-label"><p>Webmaster email:</p></div>
+        <div class="contact-value"><p><a href="mailto:wallace@a3academy.net">wallace@a3academy.net</a></p></div>
+
+    </div>
+</div>
+
+<div id="cardx">
+    <div id="visit-box" class="mini-card" onclick="location.href='/youtube';">
+    </div>
+
+    <div id="about-box" class="mini-card" onclick="location.href='/about';">
+    </div>
+
+    <a id="voteLink" href="#">
+        <div id="vote-box" class="mini-card">
+        </div>
+    </a>
+
+    <div id="shop-box" class="mini-card" onclick="location.href='/store';">
+    </div>
+</div>
+
+<div id="m-footer" class="card">
+    <div id="m-footer-content">
+        <div class="m-soc-icon" id="m-fbicon"></div>
+        <div class="m-soc-icon" id="m-twittericon"></div>
+        <div class="m-soc-icon" id="m-yticon"></div>
+        <div class="m-soc-icon" id="m-shopicon"></div>
+    </div>
+</div>
+
+<div id="footer">
+    <div id="footer-text">
+        <p>Copyright &copy; A3Academy <script>document.write((new Date()).getFullYear());</script>&nbsp;&nbsp;|&nbsp;&nbsp;Built by Aniruddh Iyengar</p>
+    </div>
+</div>
+
+<script>
+
+$(window).scroll(function(e) {
+    var h = $(window).height();
+    var s = $(window).scrollTop();
+    var o = 1 - s*1.0/h*2;
+    $("#jumbo-arrow").css({ "opacity" : "" + o });
+});
+
+if (!Cookies.get("u")) {
+    var id = (new Date()).getTime();
+    document.cookie = "u=" + id + ";";
+    Cookies.set("u", id, {expires: 365});
+}
+else {
+    id = Cookies.get("u");
+}
+
+console.log("retrieved cookie user id = " + id);
+
+$("#votePage, #voteLink").attr("href", "/user/login?u=" + id);
+
+</script>

@@ -1,0 +1,633 @@
+
+@import "../main";
+
+#jumbo {
+
+	height: 100vh;
+
+	background-image: url("../../images/a3splash.png");
+	background-size: cover;
+}
+
+#jumbo-front {
+	width: 526px;
+	height: 400px;
+
+	margin: auto;
+}
+
+#jumbo-logo {
+	width: 400px;
+	height: 400px;
+	float: left;
+
+	border-right: 2px solid white;
+
+	background-image: url("../../images/a3logo.png");
+	background-size: cover;
+}
+
+#jumbo-icons {
+	width:124px;
+	height: 400px;
+	float:right;
+}
+
+.soc-icon {
+	width: 60px;
+	height: 60px;
+	margin: 32px;
+
+	background-size: cover;
+
+	opacity: 0.7;
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.soc-icon:hover {
+	opacity: 1.0;
+	cursor: pointer;
+}
+
+#jumbo-fbicon {
+	background-image: url("../../images/icons/fbicon.png");
+}
+#jumbo-twittericon {
+	background-image: url("../../images/icons/twittericon.png");
+}
+
+#jumbo-yticon {
+	background-image: url("../../images/icons/yticon.png");
+}
+#jumbo-shopicon {
+	background-image: url("../../images/icons/shopicon.png");
+}
+
+#jumbo-arrow {
+	background-image: url("../../images/down.png");
+	background-size: cover;
+	width: 70px;
+	height: 70px;
+	position:absolute;
+
+	bottom:0;
+	left: 50vw;
+	margin-left: -35px;
+	margin-bottom: 20px;
+
+	cursor: pointer;
+}
+
+#visit {
+	background-color: @siteBlue;
+	height: 150px;
+	h1 {
+		color: white;
+	}
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+	cursor: pointer;
+
+}
+
+#visit-text {
+	height: 80px;
+	width: 1200px;
+	margin: auto;
+	margin-top: 35px;
+
+	h1 {
+		margin-top: 10px;
+	}
+
+	text-align: center;
+}
+
+#visit:hover {
+	opacity: 0.8;
+}
+
+#vote {
+	background-color: @siteGray;
+	background-image: url("../../images/cursor.png");
+}
+
+#about {
+
+	background-color: white;
+	background-image: url("../../images/dna.png");
+}
+
+#about-content {
+	width: 1000px;
+	margin: auto;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+#about-text {
+	width: 600px;
+	float:left;
+}
+
+#vote-text {
+	width: 600px;
+	float: right;
+}
+
+#shop {
+	background-color: white;
+	background-image: url("../../images/bag.png");
+}
+
+#contact-content {
+	width: 1000px;
+	margin: auto;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+#menu-button {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+
+	background-image: url("../../images/menu.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	display: none;
+}
+
+#m-footer {
+	display: none;
+}
+
+
+
+#menu {
+	display: none;
+}
+
+#contact {
+	background-color: @siteGray;
+	text-align: center;
+}
+
+#cardx {
+	display: none;
+}
+
+.contact-label {
+	width: 490px;
+	margin-right: 10px;
+	float: left;
+	clear: left;
+	margin: none;
+	height: 50px;
+	text-align: right;
+}
+
+.contact-value {
+	text-align: left;
+	width: 490px;
+	margin-left: 10px;
+	float: left;
+	clear: right;
+	margin: none;
+	height: 50px;
+}
+
+@media only screen and (max-width: 640px) and (orientation:portrait) {
+
+	
+	#jumbo-front {
+		width: 70vw;
+		height: 80vw;
+	}
+	#jumbo-logo {
+		width: 70vw;
+		height: 70vw;
+		border:none;
+	}
+	#jumbo-icons {
+		display: none;
+	}
+	#menu-button {
+		display: block;
+	}
+
+	#vote, #about, #shop, #contact {
+		display:none;
+	}
+
+	#about-text {
+		width: 90vw;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	#contact {
+		height: auto;
+	}
+	#contact-text {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		width: 90vw;
+	}
+	.contact-label {
+		width: 90vw;
+		font-weight: 600;
+		clear: both;
+		height: 40px;
+	}
+	.contact-email {
+		width: 90vw;
+		font-weight: 400;
+		clear: both;
+		margin-bottom: 20px;
+		height: 40px;
+	}
+
+	#visit {
+		display: none;
+	}
+
+	#visit-box, #shop-box {
+		background-color: #cacaca;
+	}
+
+	#about-box, #vote-box {
+		background-color: white;
+	}
+
+	#visit-box {
+		background-image: url("../../images/youtube-label.png");
+	}
+	#vote-box {
+		background-image: url("../../images/vote-label.png");
+	}
+	#about-box {
+		background-image: url("../../images/about-label.png");
+	}
+	#shop-box {
+		background-image: url("../../images/shop-label.png");
+	}
+
+	#menu {
+		width: 100vw;
+		height: 100vh;
+		max-width: 100%;
+		background-color: rgba(255,255,255,0.9);
+		position: fixed;
+
+		top: 0;
+		left: 100vw;
+
+		-webkit-transition: left 0.4s, opacity 0.4s;
+		-moz-transition: left 0.4s, opacity 0.4s;
+		-o-transition: left 0.4s, opacity 0.4s;
+		transition: left 0.4s, opacity 0.4s;
+
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		-webkit-box-align: center;
+
+		align-items: center;
+		opacity: 0;
+	}
+	#menu.visible {
+
+		left: 0;
+		opacity: 1;
+	}
+
+	#menu-content {
+		width: 70vw;
+		height: 70vh;
+		margin: auto;
+	}
+
+	#hr {
+		width: 100%;
+		height: 1px;
+		margin-top: 20px;
+		margin-bottom: 19px;
+		border-top: 3px solid black;
+	}
+
+	.mini-card {
+		width: 50vw;
+		height: 320px;
+		display: inline-block;
+		float: left;
+
+		background-size: 70%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	#m-group-icons {
+		bottom: 0;
+	}
+
+	#menu-close {
+		width: 40px;
+		height: 40px;
+		top: 20px;
+		right: 20px;
+		position: absolute;
+		background-image: url("../../images/icons/black/xicon.png");
+		background-size: cover;
+		cursor: pointer;
+	}
+
+	.m-soc-icon {
+		width: 15vw;
+		height: 15vw;
+		margin: 1vw;
+		display:inline;
+		float:left;
+		background-size: cover;
+		opacity: 0.7;
+
+		-webkit-transition: opacity 0.2s;
+		-moz-transition: opacity 0.2s;
+		-o-transition: opacity 0.2s;
+		transition: opacity 0.2s;
+		cursor: pointer;
+	}
+
+	#m-footer {
+		display: block;
+		background-color: @siteBlue;
+		height: 80px;
+		.m-soc-icon {
+			width: 40px;
+			height: 40px;
+			margin: 10px;
+		}
+		#m-footer-content {
+			width: 280px;
+			height:60px;
+			margin: auto;
+			padding: 12px;
+		}
+	}
+
+	#footer {
+		display: none;
+		height: 60px;
+	}
+	.m-soc-icon {
+		opacity: 1;
+	}
+
+	#cardx {
+		height: 640px;
+		width: 100vw;
+		max-width: 100%;
+		display: block;
+	}
+
+	#m-fbicon {
+		background-image: url("../../images/icons/fbicon.png");
+	}
+	#m-twittericon {
+		background-image: url("../../images/icons/twittericon.png");
+	}
+
+	#m-yticon {
+		background-image: url("../../images/icons/yticon.png");
+	}
+	#m-shopicon {
+		background-image: url("../../images/icons/shopicon.png");
+	}
+}
+
+@media only screen and (max-width: 960px) and (orientation:landscape) {
+
+	#jumbo-front {
+		width: 40vw;
+		height: 45vw;
+	}
+
+	#jumbo-logo {
+		width: 40vw;
+		height: 40vw;
+		border: none;
+	}
+
+	#jumbo-arrow {
+		display: none;
+	}
+	
+	#jumbo-icons {
+		display: none;
+	}
+	#menu-button {
+		display: block;
+	}
+
+	#vote, #about, #shop, #contact {
+		display:none;
+	}
+
+	#about-text {
+		width: 90vw;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	#contact {
+		height: auto;
+	}
+	#contact-text {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		width: 90vw;
+	}
+	.contact-label {
+		width: 90vw;
+		font-weight: 600;
+		clear: both;
+		height: 40px;
+	}
+	.contact-email {
+		width: 90vw;
+		font-weight: 400;
+		clear: both;
+		margin-bottom: 20px;
+		height: 40px;
+	}
+
+	#visit {
+		display: none;
+	}
+
+	#visit-box, #shop-box {
+		background-color: #cacaca;
+	}
+
+	#about-box, #vote-box {
+		background-color: white;
+	}
+
+	#visit-box {
+		background-image: url("../../images/youtube-label.png");
+	}
+	#vote-box {
+		background-image: url("../../images/vote-label.png");
+	}
+	#about-box {
+		background-image: url("../../images/about-label.png");
+	}
+	#shop-box {
+		background-image: url("../../images/shop-label.png");
+	}
+
+	#menu {
+		width: 100vw;
+		height: 100vh;
+		max-width: 100%;
+		background-color: rgba(255,255,255,0.9);
+		position: fixed;
+
+		top: 0;
+		left: 100vw;
+
+		-webkit-transition: left 0.4s, opacity 0.4s;
+		-moz-transition: left 0.4s, opacity 0.4s;
+		-o-transition: left 0.4s, opacity 0.4s;
+		transition: left 0.4s, opacity 0.4s;
+
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		-webkit-box-align: center;
+
+		align-items: center;
+		opacity: 0;
+	}
+	#menu.visible {
+
+		left: 0;
+		opacity: 1;
+	}
+
+	#menu-content {
+		width: 70vw;
+		height: 70vh;
+		margin: auto;
+	}
+
+	#hr {
+		width: 100%;
+		height: 1px;
+		margin-top: 20px;
+		margin-bottom: 19px;
+		border-top: 3px solid black;
+	}
+
+	.mini-card {
+		width: 50vw;
+		height: 320px;
+		display: inline-block;
+		float: left;
+
+		background-size: 70%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	#m-group-icons {
+		bottom: 0;
+	}
+
+	#menu-close {
+		width: 40px;
+		height: 40px;
+		top: 20px;
+		right: 20px;
+		position: absolute;
+		background-image: url("../../images/icons/black/xicon.png");
+		background-size: cover;
+		cursor: pointer;
+	}
+
+	.m-soc-icon {
+		width: 15vw;
+		height: 15vw;
+		margin: 1vw;
+		display:inline;
+		float:left;
+		background-size: cover;
+		opacity: 0.7;
+
+		-webkit-transition: opacity 0.2s;
+		-moz-transition: opacity 0.2s;
+		-o-transition: opacity 0.2s;
+		transition: opacity 0.2s;
+		cursor: pointer;
+	}
+
+	#m-footer {
+		display: block;
+		background-color: @siteBlue;
+		height: 80px;
+		.m-soc-icon {
+			width: 40px;
+			height: 40px;
+			margin: 10px;
+		}
+		#m-footer-content {
+			width: 280px;
+			height:60px;
+			margin: auto;
+			padding: 12px;
+		}
+	}
+
+	#footer {
+		display: none;
+		height: 60px;
+	}
+	.m-soc-icon {
+		opacity: 1;
+	}
+
+	#cardx {
+		height: 640px;
+		width: 100vw;
+		max-width: 100%;
+		display: block;
+	}
+
+	#m-fbicon {
+		background-image: url("../../images/icons/fbicon.png");
+	}
+	#m-twittericon {
+		background-image: url("../../images/icons/twittericon.png");
+	}
+
+	#m-yticon {
+		background-image: url("../../images/icons/yticon.png");
+	}
+	#m-shopicon {
+		background-image: url("../../images/icons/shopicon.png");
+	}
+}

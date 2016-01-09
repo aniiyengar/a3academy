@@ -1,0 +1,177 @@
+
+@import "../main";
+
+#voting-content {
+	width: 1000px;
+	height: 500px;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 70px;
+}
+
+#topic-list-container {
+	width: 580px;
+	height: 500px;
+	margin-right: 20px;
+	float: left;
+}
+
+#suggest-container {
+	width: 400px;
+	height: 500px;
+	float: right;
+}
+
+#topic-table {
+	height: 450px;
+	width: 560px;
+	overflow: hidden;
+}
+
+.topic-item {
+	width: 560px;
+
+	padding: 12px;
+	font-size: 18px;
+}
+
+.topic-item:nth-child(odd) {
+	background-color: @siteGray;
+}
+
+.topic-item:nth-child(even) {
+	background-color: lighten(@siteGray, 10%);
+}
+
+.upvote {
+	width:20px;
+	height: 20px;
+
+	background-image: url("../../images/uparrow.png");
+	background-size: cover;
+
+	margin-top: 2px;
+
+	display:inline;
+	float:right;
+	cursor: pointer;
+}
+
+.upvote-label {
+	width: 70px;
+	height: 20px;
+	display: inline;
+	float: right;
+	text-align: right;
+	font-weight: 600;
+	font-size: 20px;
+
+	padding: 0 10px;
+
+	color: #00A332;
+}
+
+.upvote.selected {
+	background-image: url("../../images/uparrow-selected.png");
+}
+
+.downvote {
+	width: 20px;
+	height: 20px;
+
+	margin-top: 2px;
+
+	background-image: url("../../images/downarrow.png");
+	background-size: cover;
+
+	display:inline;
+	float:right;
+	cursor: pointer;
+}
+
+.downvote-label {
+	width: 70px;
+	height: 20px;
+	display: inline;
+	float: right;
+	text-align: right;
+	font-weight: 600;
+	font-size: 20px;
+
+	padding: 0 10px;
+
+	color: #b70b14;
+}
+
+.downvote.selected {
+	background-image: url("../../images/downarrow-selected.png");
+}
+
+.vote-space {
+	width: 15px;
+	height: 20px;
+	display: inline;
+	float: right;
+}
+
+h3 {
+	font-size: 28px;
+	margin-bottom: 10px;
+	color: @siteBlue;
+}
+
+#suggest-box {
+	width: 100%;
+	height: 462px;
+	background-color: @siteGray;
+
+	padding: 12px;
+}
+
+#captcha {
+	margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 960px) {
+	#topic-table {
+		height: auto;
+		width: 100vw;
+	}
+	#topic-list-container {
+		height: auto;
+		width: 100vw;
+	}
+	#voting-content {
+		height: auto;
+		width: 100vw;
+		margin-bottom: 20px;
+	}
+	#voting-content {
+		width: 100vw;
+		max-width: 100%;
+	}
+
+	#topic-list-container {
+		width: 100%;
+	}
+
+	#suggest-container {
+		width: 100%;
+	}
+
+	.topic-item {
+		width: 100vw;
+	}
+
+	.vote-space {
+		width: 0;
+	}
+
+	.downvote-label {
+		width: 40px;
+	}
+}
+
+
+
